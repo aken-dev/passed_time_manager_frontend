@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>経っちゃった時間マネージャ</title>
+  <link rel="stylesheet" href="app.css" />
+  <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+  <script type="module" src="dist/bundle.js"></script>
+</head>
+
+<body>
+  <template id="schedule-input">
+    <form>
+
+      <div class="form-control">
+        <label for="title">やる事</label>
+        <input type="text" id="title" />
+        <label for="howmany">１回当たりのやる量</label>
+        <input type="text" id="howmany" />
+        <table>
+          <td><label for="times">実施頻度</label>
+          <td>
+            <tr>
+              <td><input type="number" id="days" value="1" step="1" min="1" max="10000" /></td>
+              <th><label for="times">日に</label></th>
+              <td><input type="number" id="times" step="1" min="0" max="10000" /></td>
+              <th><label for="times">回 実施する</label></th>
+            </tr>
+        </table>
+        <label for="description">備考</label>
+        <textarea id="description" rows="3"></textarea>
+      </div>
+      <button type="submit">スケジュール追加</button>
+    </form>
+  </template>
+  <template id="single-schedule">
+    <li draggable="true">
+      <div class="rmbutton" id="remove_button_target"></div>
+      <h1></h1>
+      <p></p>
+      <h3></h3>
+      <h4></h4>
+      <h2></h2>
+      <button id="status_change"></button>
+    </li>
+  </template>
+  <template id="schedule-list">
+    <section class="schedules">
+      <header>
+        <h2></h2>
+      </header>
+      <ul></ul>
+    </section>
+  </template>
+  <div id="app"></div>
+</body>
+
+</html>
